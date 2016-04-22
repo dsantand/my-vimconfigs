@@ -1,9 +1,28 @@
-" ----- patogen Load -----
+" ----- Plugins List -----
+"  ag.vim
+"  ctrlp.vim
+"  delimitMate
+"  Dockerfile.vim
+"  editorconfig-vim
+"  nerdcommenter
+"  mustache.vim
+"  nerdtree
+"  syntastic
+"  tagbar
+"  vim-airline
+"  vim-better-whitespace
+"  vim-c0
+"  vim-nerdtree-tabs
+"  vim-colors-solarized
+"  vim-surround
+" ------ Plugins Experimentales -----
+"  vim-maven-plugin
+"
 
+" ----- patogen Load -----
 execute pathogen#infect()
 
 " ----- General Shit ------
-
 set backspace=indent,eol,start
 set ruler
 set number
@@ -74,11 +93,15 @@ let g:airline#extensions#tabline#enabled=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+" hack: Demora mucho en analizar archivos java
 let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" hackEnd
 
 " ----- maven -----
+"
 "
