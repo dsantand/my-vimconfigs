@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Creating Bundle Folder"
+echo `mkdir -p bundle`
+echo "Creating $HOME/.vim Folder"
+echo `mkdir -p $HOME/.vim`
+DIR=`pwd`
+echo "Creating symLink (Bundle)"
+echo `rm -rf $HOME/.vim/bundle; ln -s $DIR/bundle $HOME/.vim/bundle`
+
+while IFS='' read -r line || [[ -n "$line" ]]; do
+	echo `cd $DIR/bundle; git clone $line`
+done < "./plugins"
