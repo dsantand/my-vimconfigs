@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "Creating Bundle Folder"
-echo `mkdir -p bundle`
-echo "Creating $HOME/.vim Folder"
-echo `mkdir -p $HOME/.vim`
+echo "Creating Folders and Downloading Pathogen"
+echo `mkdir -p ~/.vim/autoload && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim`
 DIR=`pwd`
 echo "Creating symLink (Bundle)"
-echo `rm -rf $HOME/.vim/bundle; ln -s $DIR/bundle $HOME/.vim/bundle`
+echo `rm -rf ~/.vim/bundle; ln -s $DIR/bundle ~/.vim/bundle`
+echo "Creating symLink .vimrc"
+echo `rm -rf ~/.vimrc; ln -s $DIR/vimrc ~/.vimrc`
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
 	echo `cd $DIR/bundle; git clone $line`
