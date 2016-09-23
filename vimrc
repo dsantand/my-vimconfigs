@@ -1,5 +1,5 @@
 " ----- Plugins List -----
-"  ag.vim
+"  ack.vim
 "  ctrlp.vim
 "  delimitMate
 "  Dockerfile.vim
