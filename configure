@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Creating Folders and Downloading Pathogen"
+echo `mkdir -p ~/.vim/autoload && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim`
+DIR=`pwd`
+echo "Creating symLink (Bundle)"
+echo `rm -rf ~/.vim/bundle; ln -s $DIR/bundle ~/.vim/bundle`
+echo "Creating symLink .vimrc"
+echo `rm -rf ~/.vimrc; ln -s $DIR/vimrc ~/.vimrc`
+
+while IFS='' read -r line || [[ -n "$line" ]]; do
+	echo `cd $DIR/bundle; git clone $line`
+done < "./plugins"

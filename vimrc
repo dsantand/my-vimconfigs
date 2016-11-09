@@ -1,5 +1,5 @@
 " ----- Plugins List -----
-"  ag.vim
+"  ack.vim
 "  ctrlp.vim
 "  delimitMate
 "  Dockerfile.vim
@@ -7,6 +7,7 @@
 "  nerdcommenter
 "  mustache.vim
 "  nerdtree
+"  aklt/plantuml-syntax
 "  syntastic
 "  tagbar
 "  vim-airline
@@ -15,8 +16,11 @@
 "  vim-nerdtree-tabs
 "  vim-colors-solarized
 "  vim-surround
+" ------ React ------
+"  vim-jsx
 " ------ Plugins Experimentales -----
 "  vim-maven-plugin
+"  SirVer/ultisnips
 "
 
 " ----- patogen Load -----
@@ -51,6 +55,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:ctrlp_custom_ignore = {
 			\ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|target$\|war$\|_build\$|tags$\|\.tmp$',
 			\ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+"let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_working_path_mode = 'rw'
 let g:ctrlp_dont_split = 'NERD_tree_2'
 
@@ -102,7 +107,20 @@ let g:syntastic_check_on_open = 0
 " let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " hackEnd
+let g:syntastic_javascript_checkers = ['eslint']
 
 " ----- maven -----
 "
 "
+" ----- aklt/plantuml-syntax
+let g:plantuml_executable_script="/home/dsantand/LAN/plantuml.jar"
+
+" ----- UltiSnips -----
+" let g:UltiSnipsUsePythonVersion = 2
+" let g:UltiSnipsEditSplit = "vertical"
+" let g:UltiSnipsSnippetDirectories = "$HOME/.vim/bundle/vim-snippets/snippets"
+
+" ----- vim-jsx ------
+let g:jsx_ext_required = 0 "Allow JSX in normal JS files
+
+

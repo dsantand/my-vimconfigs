@@ -1,0 +1,11 @@
+#!/bin/bash
+WORK_DIR=`pwd`
+VIMDIR="$WORK_DIR/bundle/"
+
+for DIR in "$VIMDIR"*
+do
+	if [ -d $DIR ]; then
+		echo $DIR
+		echo `git --git-dir=$DIR/.git pull`
+	fi
+done
