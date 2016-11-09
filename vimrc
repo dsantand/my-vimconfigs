@@ -30,6 +30,7 @@ set showcmd
 set incsearch
 set hlsearch
 set laststatus=2
+set mouse=a
 
 syntax on
 filetype plugin indent on
