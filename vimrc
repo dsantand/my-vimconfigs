@@ -36,6 +36,12 @@ set hlsearch
 set laststatus=2
 set mouse=a
 
+" ----- TABS -----
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+" ---------------
+
 syntax on
 filetype plugin indent on
 
