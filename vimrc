@@ -47,6 +47,28 @@ filetype plugin indent on
 
 map <F2> :q!<CR>
 
+" ----- scrooloose/syntastic settings -----
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
 " ----- NERDTree and NERDTreeTabs -----
 
 map <Leader>t :NERDTreeTabsToggle<CR>
@@ -71,14 +93,6 @@ let g:solarized_termcolors=256
 
 colorscheme solarized
 
-" ----- scrooloose/syntastic settings -----
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
-augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
-augroup END
-
 " ----- Raimondi/delimitMate settings -----
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
@@ -101,19 +115,6 @@ nmap <Leader>b :TagbarToggle<CR>
 " ----- vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled=1
 
-" ----- scrooloose/syntastic -----
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-" hack: Demora mucho en analizar archivos java
-let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" hackEnd
-let g:syntastic_javascript_checkers = ['eslint']
 
 " ----- maven -----
 "
