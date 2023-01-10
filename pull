@@ -1,8 +1,8 @@
 #!/bin/bash
 WORK_DIR=`pwd`
-VIMDIR="$WORK_DIR/bundle/"
+BUNDLE_DIR="$WORK_DIR/bundle/"
 
-for DIR in "$VIMDIR"*
+for DIR in "$BUNDLE_DIR"*
 do
 	if [ -d $DIR ]; then
 		echo $DIR
